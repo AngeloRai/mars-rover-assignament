@@ -8,8 +8,8 @@ const rover = {
 function commandRover(theRover, orders) {
     for (let i = 0; i < orders.length; i++) {
         let order = orders[i];
-        console.log(`The Rover is pointing "${rover.direction.toUpperCase()}"`);
-
+        console.log(`The Rover is pointing "${rover.direction.toUpperCase()} and it's position is x: ${rover.x}, y: ${rover.y}.`);
+        
         switch (order) {
             case 'l' || 'L':
                 turnLeft(theRover, order)
@@ -24,7 +24,7 @@ function commandRover(theRover, orders) {
                 moveBackward(theRover, order)
                 break;
             default:
-                console.log("Guess that command didn't work!");
+                 console.log("Guess that command didn't work! Command the rover with the letters 'l', 'r', 'f' and 'b'.");
         }
     }
 }
