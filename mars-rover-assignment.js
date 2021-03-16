@@ -15,11 +15,11 @@ function commandRover(theRover, orders) {
         switch (order) {
             case 'l' || 'L':
                 turnLeft(theRover)
-                console.log(`"Left" command received and the current direction is ${theRover.direction.toUpperCase()}`);
+                console.log(`"Left" command received and the current direction is "${theRover.direction.toUpperCase()}"`);
                 break;
             case 'r' || 'R':
                 turnRight(theRover)
-                console.log(`"Right" command received and the current position is ${theRover.direction.toUpperCase()}`);
+                console.log(`"Right" command received and the current direction is "${theRover.direction.toUpperCase()}"`);
                 break;
             case 'f' || 'F':
                 moveForward(theRover)
