@@ -3,7 +3,7 @@ class Rover {
         this.direction = direction;
         this.x = x;
         this.y = y;
-        this.travelLog = []
+        this.travelLog = [];
     }
 }
 const rover = new Rover('n', 0, 0)
@@ -14,18 +14,18 @@ function commandRover(theRover, orders) {
         let order = orders[i];
         switch (order) {
             case 'l' || 'L':
-                turnLeft(theRover, order)
+                turnLeft(theRover)
                 console.log(`"Left" command received and the current direction is ${theRover.direction.toUpperCase()}`);
                 break;
             case 'r' || 'R':
-                turnRight(theRover, order)
+                turnRight(theRover)
                 console.log(`"Right" command received and the current position is ${theRover.direction.toUpperCase()}`);
                 break;
             case 'f' || 'F':
-                moveForward(theRover, order)
+                moveForward(theRover)
                 break;
             case 'b' || 'B':
-                moveBackward(theRover, order)
+                moveBackward(theRover)
                 break;
             default:
                 console.log("Guess that command didn't work! Command the rover with the letters 'l', 'r', 'f' and 'b'.");
@@ -59,7 +59,7 @@ function moveForward(theRover) {
     } else if (theRover.direction === 'w') {
         rover.x--;
     }
-    const newPosition = { x: rover.x, y: rover.y };
+    let newPosition = { x: rover.x, y: rover.y };
     rover.travelLog.push(newPosition);
 }
 
@@ -74,12 +74,13 @@ function moveBackward(theRover) {
     } else if (theRover.direction === 'w') {
         rover.x++;
     }
-    const newPosition = { x: rover.x, y: rover.y };
+    let newPosition = { x: rover.x, y: rover.y };
     rover.travelLog.push(newPosition);
 }
+
 
 commandRover(rover, "rffrffffffllffffffff");
 console.log("The rover went through the following path:");
 console.log(rover.travelLog);
 
-console.log(`The Rover's current position is: x: ${rover.travelLog[rover.travelLog.length - 1].x}, y: ${rover.travelLog[rover.travelLog.length - 1].y}`
+console.log(`The Rover's current position is: x: ${rover.travelLog[rover.travelLog.length - 1].x}, y: ${rover.travelLog[rover.travelLog.length - 1].y}`);
